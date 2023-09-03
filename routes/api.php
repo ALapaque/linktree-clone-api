@@ -23,7 +23,7 @@ Route::get('test', function () {
 });
 
 
-Route::middleware(['auth.session'])->group(function () {
+Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('users', [UserController::class, 'index']);
     Route::patch('users/{user}', [UserController::class, 'update']);
 

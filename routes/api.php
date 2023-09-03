@@ -22,19 +22,18 @@ Route::get('test', function () {
     return response('OK', 200);
 });
 
-Route::group(function () {
-    Route::get('users', [UserController::class, 'index']);
-    Route::patch('users/{user}', [UserController::class, 'update']);
 
-    Route::post('user-image', [UserImageController::class, 'store']);
+Route::get('users', [UserController::class, 'index']);
+Route::patch('users/{user}', [UserController::class, 'update']);
 
-    Route::get('links', [LinkController::class, 'index']);
-    Route::post('links', [LinkController::class, 'store']);
-    Route::patch('links/{link}', [LinkController::class, 'update']);
-    Route::delete('links/{link}', [LinkController::class, 'destroy']);
+Route::post('user-image', [UserImageController::class, 'store']);
 
-    Route::post('link-image', [LinkImageController::class, 'store']);
+Route::get('links', [LinkController::class, 'index']);
+Route::post('links', [LinkController::class, 'store']);
+Route::patch('links/{link}', [LinkController::class, 'update']);
+Route::delete('links/{link}', [LinkController::class, 'destroy']);
 
-    Route::get('themes', [ThemeController::class, 'index']);
-    Route::patch('themes', [ThemeController::class, 'update']);
-});
+Route::post('link-image', [LinkImageController::class, 'store']);
+
+Route::get('themes', [ThemeController::class, 'index']);
+Route::patch('themes', [ThemeController::class, 'update']);

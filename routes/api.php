@@ -22,7 +22,7 @@ Route::get('test', function () {
     return response('OK', 200);
 });
 
-Route::middleware(['auth', 'throttle:6,1'])->group(function () {
+Route::group(function () {
     Route::get('users', [UserController::class, 'index']);
     Route::patch('users/{user}', [UserController::class, 'update']);
 
